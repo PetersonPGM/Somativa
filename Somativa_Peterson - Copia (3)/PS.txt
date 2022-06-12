@@ -1,0 +1,1 @@
+PS. Arquivos com anotações ou códigos semelhantes foram dispensados comentários, evitando a redundância de comentários
