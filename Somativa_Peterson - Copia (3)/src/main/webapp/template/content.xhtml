@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf" lang="pt-br">
+
+
+    <body>
+	    <ui:composition>
+
+		<h:form>			
+			<br />
+			
+			<h3>Escolha os produtos:</h3>
+			<h:selectManyCheckbox value="#{editProdutoBean.selectedProdutosIds}" layout="pageDirection">
+				<f:selectItems value="#{pageBean.produtos}" var="p" itemValue="#{p.id}" itemLabel="#{p.nome} - #{formatterBean.formatarMoeda(p.valor)}" />
+			</h:selectManyCheckbox>
+			
+			<br />
+		
+			<h:commandButton value="Cadastrar Pedido" action="#{pageBean.cadastrarPedido}" />
+			<h:commandButton value="Cancelar" action="pedidos?faces-redirect=true" />
+		</h:form>	
+
+	    </ui:composition>
+    </body>
+</html>
